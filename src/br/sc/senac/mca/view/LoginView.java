@@ -4,32 +4,46 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class LoginView {
-    private JPanel panel1;
-    private JButton btnBack;
-    private JButton btnConfirm;
+public class LoginView extends JFrame{
+    private JPanel pnlLogin;
+    private JButton btnSair;
+    private JButton btnLogin;
     private JTextField txtPassword;
     private JTextField txtLogin;
     private JLabel lblPassword;
     private JLabel lblLogin;
-    private JButton registerButton;
+    private JButton btnRegistrar;
 
     public LoginView() {
-
-
+        allComponents();
+        initializer();
+    }
+private void initializer(){
+        setContentPane(pnlLogin);
+        setTitle("Login");
+        setVisible(true);
+        setSize(300,200);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 }
 private void allComponents(){
-    btnConfirm.addActionListener(new ActionListener() {
+    btnLogin.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
 
         }
     });
-
-    btnBack.addActionListener(new ActionListener() {
+    btnSair.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
+            dispose();
+        }
+    });
 
+    btnRegistrar.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            dispose();
+            RegisterView registerView = new RegisterView();
         }
     });
 }
