@@ -28,17 +28,15 @@
           <text value="Password"/>
         </properties>
       </component>
-      <component id="39100" class="javax.swing.JButton" binding="btnExit">
+      <component id="39100" class="javax.swing.JButton" binding="btnSair">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="191" height="30"/>
-          </grid>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Exit"/>
+          <text value="Sair"/>
         </properties>
       </component>
-      <component id="13c3" class="javax.swing.JButton" binding="btnConfirm">
+      <component id="13c3" class="javax.swing.JButton" binding="btnLogin">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -64,12 +62,12 @@
         </constraints>
         <properties/>
       </component>
-      <component id="7cc91" class="javax.swing.JButton" binding="registerButton" default-binding="true">
+      <component id="7cc91" class="javax.swing.JButton" binding="btnRegistrar">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Register"/>
+          <text value="Registrar"/>
         </properties>
       </component>
     </children>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="br/sc/senac/mca/dao/implements/" kind="src" path="src"/>
+	<classpathentry kind="src" path="src/br/sc/senac/mca/dao/implements"/>
+	<classpathentry kind="output" path="out/production/Cad"/>
+</classpath>

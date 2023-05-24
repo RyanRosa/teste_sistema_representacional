@@ -36,16 +36,19 @@ public class FormView extends JFrame{
 public void initializer(){
     setTitle("Formulário");
     setVisible(true);
-    setSize(400, 500);
+    setSize(600, 1000);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setContentPane(pnlForm);
+    setLocationRelativeTo(null);
+    pack();
 }
 public void allComponents(){
     btnEnviar.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(null, "Enviado com sucesso");
-
+            dispose();
+            ResultView resultView = new ResultView();
         }
     });
 }

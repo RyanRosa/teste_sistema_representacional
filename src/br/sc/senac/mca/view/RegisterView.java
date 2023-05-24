@@ -1,6 +1,7 @@
 package br.sc.senac.mca.view;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -26,10 +27,12 @@ public class RegisterView extends JFrame{
 
 public void initializer(){
     setVisible(true);
-    setSize(200,200);
+    setSize(300,210);
     setTitle("Cadastro");
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setContentPane(pnlRegister);
+    setLocationRelativeTo(null);
+
 }
 public void allComponents(){
     btnCadastrar.addActionListener(new ActionListener() {

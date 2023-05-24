@@ -1,6 +1,7 @@
 package br.sc.senac.mca.view;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -22,8 +23,9 @@ private void initializer(){
         setContentPane(pnlLogin);
         setTitle("Login");
         setVisible(true);
-        setSize(300,200);
+        setMinimumSize(new Dimension(400,120));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 }
 private void allComponents(){
     btnLogin.addActionListener(new ActionListener() {
