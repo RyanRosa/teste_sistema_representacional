@@ -5,17 +5,29 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Usuario implements Serializable {
-	private static final long serialVersionUID = 1L;
-	
-	private Integer id;
+    private static final long serialVersionUID = 1L;
+
+    private Integer id;
     private String nome;
     private Date nascimento;
     private String curso;
     private Integer fase;
     private String senha;
 
-    public Usuario(){
+    private Teste teste;
 
+    public Usuario() {
+
+    }
+
+    public Usuario(Integer id, String nome, Date nascimento, String curso, Integer fase, String senha, Teste teste) {
+        this.id = id;
+        this.nome = nome;
+        this.nascimento = nascimento;
+        this.curso = curso;
+        this.fase = fase;
+        this.senha = senha;
+        this.teste = teste;
     }
 
     public Integer getId() {
@@ -64,6 +76,14 @@ public class Usuario implements Serializable {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public Teste getTeste() {
+        return teste;
+    }
+
+    public void setTeste(Teste teste) {
+        this.teste = teste;
     }
 
     @Override

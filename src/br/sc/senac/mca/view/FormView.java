@@ -1,5 +1,8 @@
 package br.sc.senac.mca.view;
 
+import br.sc.senac.mca.model.Teste;
+import br.sc.senac.mca.model.Usuario;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -48,7 +51,9 @@ public void allComponents(){
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(null, "Enviado com sucesso");
             dispose();
-            ResultView resultView = new ResultView();
+            Teste teste = new Teste(1, 25, 25, 25, 25);
+            Usuario usuario = new Usuario(1, "Ryan", null, "ADS", 1, "1234", teste);
+            ResultView resultView = new ResultView(usuario);
         }
     });
 }
