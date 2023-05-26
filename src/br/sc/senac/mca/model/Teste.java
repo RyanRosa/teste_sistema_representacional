@@ -13,8 +13,7 @@ public class Teste {
 
     }
 
-    public Teste(Integer id, Integer digital, Integer auditivo, Integer cinestesico, Integer visual) {
-        this.id = id;
+    public Teste(Integer digital, Integer auditivo, Integer cinestesico, Integer visual) {
         this.digital = digital;
         this.auditivo = auditivo;
         this.cinestesico = cinestesico;

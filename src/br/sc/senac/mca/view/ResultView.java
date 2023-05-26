@@ -49,10 +49,10 @@ public class ResultView extends JFrame {
         });
     }
     private void mostrarDados(){
-        lblNome.setText(usuario.getNome());
+        /*lblNome.setText(usuario.getNome());
         lblDigital.setText(usuario.getTeste().getDigital());
         lblAuditivo.setText(usuario.getTeste().getAuditivo());
         lblCinestésico.setText(usuario.getTeste().getCinestesico());
-        lblVisual.setText(usuario.getTeste().getVisual());
+        lblVisual.setText(usuario.getTeste().getVisual());*/
     }
 }

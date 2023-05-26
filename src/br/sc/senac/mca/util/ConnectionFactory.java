@@ -10,13 +10,15 @@ public class ConnectionFactory {
     private static final String USER = "root";
     private static final String PASSWORD = "root"; //vai para o metod getConnection
 
+    private static Connection conexao;
+
+    private ConnectionFactory() {
+    }
+
     public static Connection getConexao() {
-        Connection conexao = null; // inicializando o objeto conexao e atribuindo um valor nulo (tipo connection)
-
         try {
-            conexao = DriverManager.getConnection(URL, USER, PASSWORD);
-
-            if (conexao != null) {
+            if (conexao == null) {
+                conexao = DriverManager.getConnection(URL, USER, PASSWORD);
                 System.out.println("Conexão estabelecida! ");
             }
         } catch (SQLException e) {

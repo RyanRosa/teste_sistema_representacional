@@ -74,7 +74,7 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="1aaab" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+      <component id="1aaab" class="javax.swing.JTextField" binding="txtFase">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>

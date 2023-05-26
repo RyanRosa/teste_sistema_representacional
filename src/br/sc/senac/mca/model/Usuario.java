@@ -5,97 +5,96 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Usuario implements Serializable {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private Integer id;
-    private String nome;
-    private Date nascimento;
-    private String curso;
-    private Integer fase;
-    private String senha;
+	private Integer id;
+	private String nome;
+	private Date nascimento;
+	private String curso;
+	private Integer fase;
+	private String senha;
+	private Teste teste;
 
-    private Teste teste;
+	public Usuario() {
 
-    public Usuario() {
+	}
 
-    }
+	public Usuario(String nome, Date nascimento, String curso, Integer fase, String senha) {
+		this.nome = nome;
+		this.nascimento = nascimento;
+		this.curso = curso;
+		this.fase = fase;
+		this.senha = senha;
+	}
 
-    public Usuario(Integer id, String nome, Date nascimento, String curso, Integer fase, String senha, Teste teste) {
-        this.id = id;
-        this.nome = nome;
-        this.nascimento = nascimento;
-        this.curso = curso;
-        this.fase = fase;
-        this.senha = senha;
-        this.teste = teste;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public String getNome() {
+		return nome;
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public Date getNascimento() {
+		return nascimento;
+	}
 
-    public Date getNascimento() {
-        return nascimento;
-    }
+	public void setNascimento(Date nascimento) {
+		this.nascimento = nascimento;
+	}
 
-    public void setNascimento(Date nascimento) {
-        this.nascimento = nascimento;
-    }
+	public String getCurso() {
+		return curso;
+	}
 
-    public String getCurso() {
-        return curso;
-    }
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}
 
-    public void setCurso(String curso) {
-        this.curso = curso;
-    }
+	public Integer getFase() {
+		return fase;
+	}
 
-    public Integer getFase() {
-        return fase;
-    }
+	public void setFase(Integer fase) {
+		this.fase = fase;
+	}
 
-    public void setFase(Integer fase) {
-        this.fase = fase;
-    }
+	public String getSenha() {
+		return senha;
+	}
 
-    public String getSenha() {
-        return senha;
-    }
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+	public Teste getTeste() {
+		return teste;
+	}
 
-    public Teste getTeste() {
-        return teste;
-    }
+	public void setTeste(Teste teste) {
+		this.teste = teste;
+	}
 
-    public void setTeste(Teste teste) {
-        this.teste = teste;
-    }
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		Usuario usuario = (Usuario) o;
+		return id.equals(usuario.id);
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Usuario usuario = (Usuario) o;
-        return id.equals(usuario.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
 }

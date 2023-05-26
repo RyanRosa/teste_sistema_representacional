@@ -1,5 +1,8 @@
 package br.sc.senac.mca.view;
 
+import br.sc.senac.mca.dao.DaoFactory;
+import br.sc.senac.mca.dao.UsuarioDao;
+import br.sc.senac.mca.dao.impl.UsuarioDaoJDBC;
 import br.sc.senac.mca.model.Teste;
 import br.sc.senac.mca.model.Usuario;
 
@@ -30,11 +33,14 @@ public class FormView extends JFrame{
     private JComboBox cbxQuestion5_3;
     private JComboBox cbxQuestion5_4;
     private JPanel pnlForm;
+    private Usuario usuario;
+    private UsuarioDao usuarioDao;
 
-    public FormView() {
-    allComponents();
-    initializer();
-
+    public FormView(Usuario usuario) {
+        this.usuario = usuario;
+        allComponents();
+        initializer();
+        this.usuarioDao = DaoFactory.createUsuarioDao();
 }
 public void initializer(){
     setTitle("Formulário");
@@ -50,10 +56,10 @@ public void allComponents(){
         @Override
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(null, "Enviado com sucesso");
-            dispose();
-            Teste teste = new Teste(1, 25, 25, 25, 25);
-            Usuario usuario = new Usuario(1, "Ryan", null, "ADS", 1, "1234", teste);
+            Teste teste = new Teste();
+            usuarioDao.insercao(usuario);
             ResultView resultView = new ResultView(usuario);
+            dispose();
         }
     });
 }

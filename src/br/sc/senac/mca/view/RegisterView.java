@@ -1,16 +1,19 @@
 package br.sc.senac.mca.view;
 
+import br.sc.senac.mca.model.Usuario;
+
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class RegisterView extends JFrame{
     private JPanel pnlRegister;
     private JTextField txtDataDeNascimento;
     private JTextField txtNome;
     private JPasswordField pswSenha;
-    private JTextField textField3;
+    private JTextField txtFase;
     private JTextField txtCurso;
     private JButton btnCadastrar;
     private JLabel lblSenha;
@@ -38,9 +41,14 @@ public void allComponents(){
     btnCadastrar.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Cadastro feito com sucesso!");
-            dispose();
-            FormView formView = new FormView();
+            try {
+                Usuario usuario = new Usuario(txtNome.getText(), new SimpleDateFormat("dd/MM/yyyy").parse(txtDataDeNascimento.getText()), txtCurso.getText(), Integer.parseInt(txtFase.getText()), pswSenha.getText());
+                FormView formView = new FormView(usuario);
+                dispose();
+            }catch(Exception exception){
+                System.out.println(exception.getMessage());
+            }
+
         }
     });
 }
