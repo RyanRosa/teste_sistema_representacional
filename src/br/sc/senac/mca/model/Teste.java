@@ -67,9 +67,19 @@ public class Teste {
         Teste teste = (Teste) o;
         return id.equals(teste.id);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Teste{" +
+                "id=" + id +
+                ", digital=" + digital +
+                ", auditivo=" + auditivo +
+                ", cinestesico=" + cinestesico +
+                ", visual=" + visual +
+                '}';
     }
 }

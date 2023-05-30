@@ -20,6 +20,7 @@ public class Usuario implements Serializable {
 	}
 
 	public Usuario(String nome, Date nascimento, String curso, Integer fase, String senha) {
+
 		this.nome = nome;
 		this.nascimento = nascimento;
 		this.curso = curso;
@@ -97,4 +98,17 @@ public class Usuario implements Serializable {
 	public int hashCode() {
 		return Objects.hash(id);
 	}
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", nascimento=" + nascimento +
+                ", curso='" + curso + '\'' +
+                ", fase=" + fase +
+                ", senha='" + senha + '\'' +
+                ", teste=" + teste +
+                '}';
+    }
 }

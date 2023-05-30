@@ -1,0 +1,25 @@
+create database gerenciamento;
+
+use gerenciamento;
+
+create table teste(
+id integer auto_increment primary key,
+digital integer,
+auditivo integer,
+cinestesico integer,
+visual integer);
+
+create table usuario(
+id integer auto_increment primary key, 
+nome varchar(50) not null, 
+dataAniversario Date,
+curso varchar(20),
+fase integer,
+senha varchar(20));
+
+create table usuario_tem_teste(id_tabela int primary key auto_increment, id_usuario int, id_teste int);
+
+alter table usuario_tem_teste add CONSTRAINT user_fk FOREIGN KEY (id_usuario) REFERENCES usuario (id) ON DELETE CASCADE;
+
+alter table usuario_tem_teste add CONSTRAINT teste_fk FOREIGN KEY (id_teste) REFERENCES teste (id) ON DELETE CASCADE;
+

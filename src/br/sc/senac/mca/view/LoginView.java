@@ -1,9 +1,14 @@
 package br.sc.senac.mca.view;
 
+import br.sc.senac.mca.dao.DaoFactory;
+import br.sc.senac.mca.model.Teste;
+import br.sc.senac.mca.model.Usuario;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
 
 public class LoginView extends JFrame{
     private JPanel pnlLogin;
@@ -31,7 +36,9 @@ private void allComponents(){
     btnLogin.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            //Teste teste = new Teste(10, 10, 20, 30);
+            //ResultView resultView = new ResultView(new Usuario("Ryan", Date.valueOf("2001-01-01"), "ADS", 2, "123", teste));
+            dispose();
         }
     });
     btnSair.addActionListener(new ActionListener() {
