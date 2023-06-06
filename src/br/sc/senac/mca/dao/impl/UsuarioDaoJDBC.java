@@ -24,9 +24,9 @@ public class UsuarioDaoJDBC implements UsuarioDao{
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		try {
-			st = conn.prepareStatement("\n" +
-					"select usuario.id, usuario.login, usuario.dataAniversario, usuario.curso, usuario.fase, usuario.senha, teste.id, teste.digital, teste.auditivo, teste.cinestesico, teste.visual from usuario \n" +
-					"inner join usuario_tem_teste on usuario.id = usuario_tem_teste.id_usuario inner join teste on teste.id = usuario_tem_teste.id_teste where usuario.id = ?");
+			st = conn.prepareStatement("select usuario.id,usuario.nome, usuario.login, usuario.dataAniversario, usuario.curso, usuario.fase, usuario.senha, teste.id, teste.digital, teste.auditivo, teste.cinestesico, teste.visual from usuario "
+					+ "inner join usuario_tem_teste on usuario.id = usuario_tem_teste.id_usuario inner join teste on teste.id = usuario_tem_teste.id_teste where id = ?;\r\n"
+					+ "");
 			//st = conn.prepareStatement("select * from usuario where id = ?");
 			st.setInt(1, id);
 			rs = st.executeQuery();
@@ -41,8 +41,20 @@ public class UsuarioDaoJDBC implements UsuarioDao{
 
 
 	@Override
-	public boolean autenticacao() {
-		// TODO Auto-generated method stub
+	public boolean autenticacao(String login, String senha) {
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		try {
+			st = conn.prepareStatement("select * from usuario where login = ? and senha = ?)");
+			st.setString(1, login);
+			st.setString(2, senha);
+			rs = st.executeQuery();
+			if(rs.next()) {
+				criarUsuario(rs);
+			}
+		}catch(SQLException e) {
+			System.out.println(e.getMessage());
+		}
 		return false;
 	}
 

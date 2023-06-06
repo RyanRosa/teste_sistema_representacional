@@ -6,7 +6,7 @@ public interface UsuarioDao {
 
 	public Usuario acharPorId(Integer id);
 
-	public boolean autenticacao();
+	public boolean autenticacao(String login, String senha);
 
 	public void insercao(Usuario usuario);
 }

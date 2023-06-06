@@ -1,6 +1,7 @@
 package br.sc.senac.mca.view;
 
 import br.sc.senac.mca.dao.DaoFactory;
+import br.sc.senac.mca.dao.impl.UsuarioDaoJDBC;
 import br.sc.senac.mca.model.Teste;
 import br.sc.senac.mca.model.Usuario;
 
@@ -36,8 +37,8 @@ private void allComponents(){
     btnLogin.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            //Teste teste = new Teste(10, 10, 20, 30);
-            //ResultView resultView = new ResultView(new Usuario("Ryan", Date.valueOf("2001-01-01"), "ADS", 2, "123", teste));
+        	Usuario usuario = UsuarioDaoJDBC.
+            ResultView resultView = new ResultView(new Usuario("Ryan", Date.valueOf("2001-01-01"), "ADS", 2, "123", teste));
             dispose();
         }
     });

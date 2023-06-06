@@ -8,6 +8,7 @@ public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Integer id;
+	private String login;
 	private String nome;
 	private Date nascimento;
 	private String curso;
@@ -19,9 +20,10 @@ public class Usuario implements Serializable {
 
 	}
 
-	public Usuario(String nome, Date nascimento, String curso, Integer fase, String senha) {
+	public Usuario(String nome, String login, Date nascimento, String curso, Integer fase, String senha) {
 
 		this.nome = nome;
+		this.login = login;
 		this.nascimento = nascimento;
 		this.curso = curso;
 		this.fase = fase;
@@ -34,6 +36,14 @@ public class Usuario implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 	public String getNome() {
@@ -99,16 +109,11 @@ public class Usuario implements Serializable {
 		return Objects.hash(id);
 	}
 
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", nascimento=" + nascimento +
-                ", curso='" + curso + '\'' +
-                ", fase=" + fase +
-                ", senha='" + senha + '\'' +
-                ", teste=" + teste +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", login=" + login + ", nome=" + nome + ", nascimento=" + nascimento + ", curso="
+				+ curso + ", fase=" + fase + ", senha=" + senha + ", teste=" + teste + "]";
+	}
+
+	
 }
